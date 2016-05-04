@@ -1,7 +1,7 @@
 #!/bin/bash
 #before install check DB setting in 
 #	judge.conf 
-#	hustoj-read-only/web/include/db_info.inc.php
+#	hhxyoj-read-only/web/include/db_info.inc.php
 #	and down here
 #and run this with root
 
@@ -19,7 +19,7 @@ sudo yum -y update
 sudo yum -y install php httpd php-mysql mysql-server php-xml php-gd gcc-c++  mysql-devel php-mbstring glibc-static flex
 sudo /etc/init.d/mysqld start
 
-sudo svn checkout https://github.com/zhblue/hustoj/trunk/trunk hustoj-read-only
+sudo svn checkout https://github.com/HHXYOJ/hhxyoj/trunk/trunk hhxyoj-read-only
 
 #create user and homedir
 sudo  /usr/sbin/useradd -m -u 1536 judge
@@ -27,11 +27,11 @@ sudo  /usr/sbin/useradd -m -u 1536 judge
 
 
 #compile and install the core
-cd hustoj-read-only/core/
+cd hhxyoj-read-only/core/
 sudo ./make.sh
 cd ../..
 #install web and db
-sudo cp -R hustoj-read-only/web $WEBBASE/JudgeOnline
+sudo cp -R hhxyoj-read-only/web $WEBBASE/JudgeOnline
 sudo chmod -R 771 $WEBBASE/JudgeOnline
 sudo chown -R $APACHEUSER $WEBBASE/JudgeOnline
 sudo mysql -h localhost -u$DBUSER -p$DBPASS < db.sql

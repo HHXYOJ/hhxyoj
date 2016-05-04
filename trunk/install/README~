@@ -6,7 +6,7 @@ HUST JOL安装说明
 手动安装顺序如下：
 
 下载源码
-	sudo svn co https://github.com/HHXYOJ/hhxyoj/trunk/trunk/ hhxyoj-read-only
+	sudo svn co https://github.com/HHXYOJ/hhxyoj/trunk/trunk/ hustoj-read-only
 创建数据库
 	mysql
 	set names utf8; 
