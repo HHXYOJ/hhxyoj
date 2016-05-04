@@ -14,7 +14,7 @@ PS: GPL保证你可以合法忽略以上注意事项但不能保证你不受鄙�
 ---
 
 ##目前使用的地址
-* [hhxyoj](http:\\www.lzpweb.cn) 
+* [hhxyoj](http://www.lzpweb.cn) 
 ##快速安装指南
 
    * 1、安装Ubuntu
