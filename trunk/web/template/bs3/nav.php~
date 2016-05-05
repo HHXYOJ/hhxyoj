@@ -63,14 +63,14 @@
 		<span id="profile">Login</span>	
 		<span class="caret"></span>
 	    </a>
-			
-            <ul class="dropdown-menu" role="menu">
+	    </li>
+		<li>
+		<a id="mail" href="mail.php">(0)</a>	
+		</li>
+                <ul class="dropdown-menu" role="menu">
 <script src="<?php echo $path_fix."template/$OJ_TEMPLATE/profile.php?".rand();?>" ></script>
               <!--<li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
 	    </ul>
-	    </li>
-		<li>
-		<a id="mail" href="mail.php">(0)</a>	</li>
             </ul>
               
           </div><!--/.nav-collapse -->

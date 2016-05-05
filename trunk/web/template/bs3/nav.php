@@ -63,14 +63,37 @@
 		<span id="profile">Login</span>	
 		<span class="caret"></span>
 	    </a>
-			
-            <ul class="dropdown-menu" role="menu">
+<ul class="dropdown-menu" role="menu">
 <script src="<?php echo $path_fix."template/$OJ_TEMPLATE/profile.php?".rand();?>" ></script>
               <!--<li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
 	    </ul>
+
+</li>
+<li>
+<a id="mail" href="mail.php">(0)</a>	
+</li>
+<?php function checkmail(){
+$mysqli=$GLOBALS['mysqli'];		
+	$sql="SELECT count(1) FROM `mail` WHERE 
+			new_mail=1 AND `to_user`='".$_SESSION['user_id']."'";
+	$result=mysqli_query($mysqli,$sql);
+	if(!$result) return false;
+	$row=mysqli_fetch_row($result);
+	$retmsg="(<span style='color:red;' >".$row[0]."</span>)";
+	mysqli_free_result($result);
+	return $retmsg;
+}
+			$mail=checkmail();
+?>
+<script>
+document.getElementById("mail").innerHTML="<?php echo  $mail ?$mail:"(0)"?>";
+document.getElementById("mail").href="<?php echo  $path_fix."mail.php"?>";
+</script>
 	    </li>
 		<li>
-		<a id="mail" href="mail.php">(0)</a>	</li>
+		
+		</li>
+               
             </ul>
               
           </div><!--/.nav-collapse -->

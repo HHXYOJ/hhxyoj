@@ -24,7 +24,7 @@ header("Pragma: no-cache");
 				$result=mysqli_query($mysqli,$sql);
 				if(!$result) return false;
 				$row=mysqli_fetch_row($result);
-				$retmsg="<span id=red>(".$row[0].")</span>";
+				$retmsg="(<span style='color:red;' >".$row[0]."</span>)";
 				mysqli_free_result($result);
 				return $retmsg;
 			}
@@ -57,6 +57,5 @@ header("Pragma: no-cache");
 		?>
 document.write("<?php echo ( $profile);?>");
 document.getElementById("profile").innerHTML="<?php echo  isset($sid)?$sid:$MSG_LOGIN  ?>";
-document.getElementById("mail").innerHTML="<?php echo  $mail ?$mail:"(0)"?>";
-document.getElementById("mail").href="<?php echo  $path_fix."mail.php"?>";
+
 
