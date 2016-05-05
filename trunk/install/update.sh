@@ -1,3 +1,4 @@
+sudo rm -r hhxyoj-read-only
 sudo rm -r /var/www/html/JudgeOnline
 
 WEBBASE=/var/www/html

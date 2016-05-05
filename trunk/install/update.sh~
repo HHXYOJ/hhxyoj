@@ -1,10 +1,7 @@
+sudo rm -r /var/www/html/JudgeOnline
+
 WEBBASE=/var/www/html
 APACHEUSER=www-data
-
-sudo su
-rm -r /var/www/html/JudgeOnline
-
-
 
 sudo svn checkout https://github.com/HHXYOJ/hhxyoj/trunk/trunk hhxyoj-read-only
 
@@ -45,4 +42,5 @@ sudo ln -s /etc/init.d/judged /etc/rc2.d/S93judged
 sudo /etc/init.d/judged start
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/httpd restart
+echo "Browse http://127.0.0.1/JudgeOnline to check if the installation is working" 
 
