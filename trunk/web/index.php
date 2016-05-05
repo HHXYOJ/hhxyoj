@@ -60,7 +60,7 @@ if(function_exists('apc_cache_info')){
 
 /////////////////////////Template
 require("template/".$OJ_TEMPLATE."/index.php");
-<?php require_once("oj-footer.php");?>
+require_once("oj-footer.php");
 /////////////////////////Common foot
 if(file_exists('./include/cache_end.php'))
 	require_once('./include/cache_end.php');
