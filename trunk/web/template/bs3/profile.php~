@@ -12,24 +12,13 @@ header("Pragma: no-cache");
 	}else{
 		require_once("../../lang/en.php");
 	}
-    function checkmail(){
-	$mysqli=$GLOBALS['mysqli'];		
-		$sql="SELECT count(1) FROM `mail` WHERE 
-				new_mail=1 AND `to_user`='".$_SESSION['user_id']."'";
-		$result=mysqli_query($mysqli,$sql);
-		if(!$result) return false;
-		$row=mysqli_fetch_row($result);
-		$retmsg="<span id=red>(".$row[0].")</span>";
-		mysqli_free_result($result);
-		return $retmsg;
-	}
 	$profile='';
 		if (isset($_SESSION['user_id'])){
 				$sid=$_SESSION['user_id'];
 				$profile.= "<i class=icon-user></i><li><a href=".$path_fix."modifypage.php>$MSG_USERINFO</a></li>&nbsp;<li><a href='".$path_fix."userinfo.php?user=$sid'><span id=red>$sid</span></a></li>";
-				$mail=checkmail();
+				
 				if ($mail)
-					$profile.= "&nbsp;<i class=icon-envelope></i><li><a href=".$path_fix."mail.php>$mail</a></li>";
+					//$profile.= "&nbsp;<i class=icon-envelope></i><li><a href=".$path_fix."mail.php>$mail</a></li>";
         $profile.="&nbsp;<li><a href='".$path_fix."status.php?user_id=$sid'><span id=red>Recent</span></a></li>";
                                 
 				$profile.= "&nbsp;<li><a href=".$path_fix."logout.php>$MSG_LOGOUT</a></li>&nbsp;";
