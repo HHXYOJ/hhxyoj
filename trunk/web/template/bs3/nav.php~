@@ -63,26 +63,16 @@
 		<span id="profile">Login</span>	
 		<span class="caret"></span>
 	    </a>
-		<?php function checkmail(){
-			$mysqli=$GLOBALS['mysqli'];		
-				$sql="SELECT count(1) FROM `mail` WHERE 
-						new_mail=1 AND `to_user`='".$_SESSION['user_id']."'";
-				$result=mysqli_query($mysqli,$sql);
-				if(!$result) return false;
-				$row=mysqli_fetch_row($result);
-				$retmsg="<span id=red>(".$row[0].")</span>";
-				mysqli_free_result($result);
-				return $retmsg;
-			}
-			$mail=checkmail();
-                        <a href=".$path_fix."mail.php>$mail</a>
-		?>
+			
             <ul class="dropdown-menu" role="menu">
 <script src="<?php echo $path_fix."template/$OJ_TEMPLATE/profile.php?".rand();?>" ></script>
               <!--<li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
 	    </ul>
 	    </li>
+		<li>
+		<a id="mail" href="mail.php">(0)</a>	</li>
             </ul>
+              
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
