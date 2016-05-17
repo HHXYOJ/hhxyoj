@@ -148,5 +148,6 @@ public class Main{
 </div>
 <hr>
 	<?php require_once("oj-footer.php");?>
+	<?php include("template/$OJ_TEMPLATE/js.php");?>
 </body>
 </html>

@@ -24,14 +24,14 @@
     <div class="container">
     <?php include("template/$OJ_TEMPLATE/nav.php");?>	    
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <p>
-<center>
-<div id=submission style="width:80%;height:300px" ></div>
-</center>
-        </p>
-	<?php echo $view_news?>
-      </div>
+      <div class="jumbotron" style="height:500px "> 
+                <p><center> <div id=submission style="width:65%;height:300px;float:left;" ></div></center></p>
+                <div style="width:35%;float:left;height:300px;padding-top:1%;">
+                <ul > 
+		<?php echo $view_news; ?>
+                </ul>
+                </div>
+            </div>
 
     </div> <!-- /container -->
 

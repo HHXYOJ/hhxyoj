@@ -1,5 +1,7 @@
 sudo rm -r hhxyoj-read-only
-sudo rm -r /var/www/html/JudgeOnline
+sudo rm -r hhxyoj-bak
+sudo mkdir hhxyoj-bak
+sudo mv -r /var/www/html/JudgeOnline ./hhxyoj-bak
 
 WEBBASE=/var/www/html
 APACHEUSER=www-data

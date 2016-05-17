@@ -14,21 +14,18 @@
 			."FROM `news` "
 			."WHERE `defunct`!='Y'"
 			."ORDER BY `importance` ASC,`time` DESC "
-			."LIMIT 50";
+			."LIMIT 10";
 	$result=mysqli_query($mysqli,$sql);//mysql_escape_string($sql));
 	if (!$result){
 		$view_news= "<h3>No News Now!</h3>";
 		$view_news.= mysql_error();
 	}else{
-		$view_news.= "<table width=96%>";
+		//$view_news.= "<table width=96%>";
 		
 		while ($row=mysqli_fetch_object($result)){
-			$view_news.= "<tr><td><td><big><b>".$row->title."</b></big>-<small>[".$row->user_id."]</small></tr>";
-			$view_news.= "<tr><td><td>".$row->content."</tr>";
+			$view_news.= "<li>[$row->time]<a href='news.php?news_id=$row->news_id'>$row->title</a></li>";
 		}
 		mysqli_free_result($result);
-		$view_news.= "<tr><td width=20%><td></tr>";
-		$view_news.= "</table>";
 	}
 $view_apc_info="";
 

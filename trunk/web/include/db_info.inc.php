@@ -1,5 +1,5 @@
 <?php @session_start();
-	ini_set("display_errors","Off");
+	ini_set("display_errors","On");
 static 	$DB_HOST="localhost";
 static 	$DB_NAME="jol";
 static 	$DB_USER="root";
@@ -10,7 +10,7 @@ static 	$OJ_HOME="./";
 static 	$OJ_ADMIN="root@localhost";
 static 	$OJ_DATA="/home/judge/data";
 static 	$OJ_BBS="discuss3";//"bbs" for phpBB3 bridge or "discuss" for mini-forum
-static  $OJ_ONLINE=false;
+static  $OJ_ONLINE=true;
 static  $OJ_LANG="cn";
 static  $OJ_SIM=false; 
 static  $OJ_DICT=false;
