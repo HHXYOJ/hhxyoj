@@ -1,9 +1,9 @@
 <?php @session_start();
-	ini_set("display_errors","On");
+	ini_set("display_errors","Off");
 static 	$DB_HOST="localhost";
 static 	$DB_NAME="jol";
 static 	$DB_USER="root";
-static 	$DB_PASS="root";
+static 	$DB_PASS="LZP@@@718918";
 	// connect db 
 static 	$OJ_NAME="黑河学院计算机学院在线测评系统";
 static 	$OJ_HOME="./";
