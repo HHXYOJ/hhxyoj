@@ -5,7 +5,7 @@
 #	and down here
 #and run this with root
 
-#CENTOS/REDHAT/FEDORA WEBBASE=/var/www/html APACHEUSER=apache 
+#CENTOS/REDHAT/FEDORA WEBBASE=/var/www/html APACHEUSER=nginx 
 WEBBASE=/var/www/html
 APACHEUSER=www-data
 DBUSER=root
@@ -27,17 +27,17 @@ fi
 #try install tools
 if uname -a|grep 'Ubuntu\|Debian'
 then 
-sudo apt-get install make flex g++ clang libmysql++-dev php5 apache2 mysql-server php5-mysql php5-gd php5-cli mono-gmcs subversion
+sudo apt-get install make flex g++ clang libmysql++-dev php5 nginx php5-fpm mysql-server php5-mysql php5-gd php5-cli mono-gmcs subversion
 sudo /etc/init.d/mysql start
-HTTP_START="sudo /etc/init.d/apache2 restart"
+HTTP_START="sudo /etc/init.d/nginx restart"
 
 else
 sudo yum -y update
 sudo yum -y install php httpd php-mysql mysql-server php-xml php-gd gcc-c++  mysql-devel php-mbstring glibc-static flex
 sudo /etc/init.d/mysqld start
 WEBBASE=/var/www/html
-APACHEUSER=apache
-HTTP_START="sudo /etc/init.d/httpd restart"
+APACHEUSER=nginx
+HTTP_START="sudo /etc/init.d/nginx restart"
 echo "/usr/bin/judged" > judged
 fi
 
@@ -90,6 +90,8 @@ sudo ln -s /etc/init.d/judged /etc/rc3.d/S93judged
 sudo ln -s /etc/init.d/judged /etc/rc2.d/S93judged
 sudo /etc/init.d/judged start
 
+sudo rm /etc/nginx/sites-enabled/default
+sudo cp default-nginx /etc/nginx/sites-enabled/default
 $HTTP_START
 
 if uname -a | grep 'Ubuntu\|Debian'
@@ -100,5 +102,5 @@ else
    chcon -R -t httpd_sys_content_t /var/www/html/
 fi
 
-echo "Browse http://127.0.0.1/JudgeOnline to check if the installation is working" 
+echo "Browser http://127.0.0.1/JudgeOnline to check if the installation is working" 
 
