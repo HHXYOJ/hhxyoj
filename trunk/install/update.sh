@@ -18,7 +18,6 @@ sudo cp -R hhxyoj-read-only/web $WEBBASE/JudgeOnline
 sudo chmod -R 771 $WEBBASE/JudgeOnline
 sudo chown -R $APACHEUSER $WEBBASE/JudgeOnline
 
-sudo /etc/init.d/apache2 restart
-sudo /etc/init.d/httpd restart
-echo "Browse http://127.0.0.1/JudgeOnline to check if the installation is working" 
+sudo /etc/init.d/nginx restart
+echo "Browser http://127.0.0.1/JudgeOnline to check if the installation is working" 
 
