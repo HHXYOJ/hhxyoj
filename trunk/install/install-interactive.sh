@@ -29,6 +29,8 @@ if uname -a|grep 'Ubuntu\|Debian'
 then 
 sudo apt-get install make flex g++ clang libmysql++-dev php5 nginx php5-fpm mysql-server php5-mysql php5-gd php5-cli mono-gmcs subversion
 sudo /etc/init.d/mysql start
+sudo    mkdir /var/www
+sudo    mkdir /var/www/html
 HTTP_START="sudo /etc/init.d/nginx restart"
 
 else
