@@ -1,0 +1,5 @@
+deb http://mirrors.tencentyun.com/ubuntu trusty main restricted universe multiverse
+deb http://mirrors.tencentyun.com/ubuntu trusty-updates main restricted universe multiverse
+deb http://mirrors.tencentyun.com/ubuntu-security trusty-security main
+deb-src http://mirrors.tencentyun.com/ubuntu trusty main restricted universe multiverse
+deb-src http://mirrors.tencentyun.com/ubuntu trusty-updates main restricted universe multiverse
