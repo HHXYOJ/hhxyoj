@@ -24,10 +24,13 @@ PS: GPL保证你可以合法忽略以上注意事项但不能保证你不受鄙�
         sudo apt-get install subversion
         sudo svn co https://github.com/HHXYOJ/hhxyoj/trunk/trunk/install hhxyoj
         cd hhxyoj
+	#非腾讯云 使用下面语句
         sudo bash install-interactive.sh
+	#腾讯云 使用下面语句
+	sudo bash tencent_install-interactive.sh
 ```
 
-* 3、安装后访问服务器80端口上的web服务JudgeOnline目录
+   * 3、安装后访问服务器80端口上的web服务JudgeOnline目录
         例如 w3m http://127.0.0.1/JudgeOnline
 
 ---
